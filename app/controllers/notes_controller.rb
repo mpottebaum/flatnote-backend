@@ -6,6 +6,9 @@ class NotesController < ApplicationController
     end
 
     def create
+        user = User.find(params[:user_id])
+        note = user.notes.create(notes_params)
+        render json: note
     end
 
     def show
@@ -15,5 +18,11 @@ class NotesController < ApplicationController
     end
 
     def destroy
+    end
+
+    private
+
+    def notes_params
+        params.require(:note).permit(:title, :content)
     end
 end
