@@ -22,6 +22,10 @@ class NotesController < ApplicationController
     end
 
     def destroy
+        note = Note.find(params[:id])
+        note.destroy
+        user = User.find(params[:user_id])
+        render json: user.notes
     end
 
     private
