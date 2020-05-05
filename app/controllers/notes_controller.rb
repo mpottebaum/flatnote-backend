@@ -15,6 +15,10 @@ class NotesController < ApplicationController
     end
 
     def update
+        note = Note.find(params[:id])
+        note.update(notes_params)
+        user = User.find(params[:user_id])
+        render json: user.notes
     end
 
     def destroy
