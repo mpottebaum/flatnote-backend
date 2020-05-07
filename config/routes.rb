@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
 
   post '/auth', to: 'auth#create'
+  get '/auth', to: 'auth#show'
 end
