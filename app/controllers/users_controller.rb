@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
 
     def create
-        user = User.find_or_create_by(username: user_params[:username])
-        render json: user
+        user = User.create(user_params)
+        if user.valid?
+            render json: user
+        else
+            render json: {message: 'Username is already taken'}, status: 401
+        end
     end
 
     def show
@@ -17,6 +21,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username)
+        params.require(:user).permit(:username, :password)
     end
 end
