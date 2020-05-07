@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:create]
 
     def create
         user = User.create(user_params)
         if user.valid?
-            render json: user
+            token = encode_token(user_id: user.id)
+            render json: {user: user, jwt: token}
         else
-            render json: {message: 'Username is already taken'}, status: 401
+            render json: {error: 'Username is already taken'}, status: 406
         end
     end
 

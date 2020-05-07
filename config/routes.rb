@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :notes
   end
+
+  post '/auth', to: 'auth#create'
 end
