@@ -1,24 +1,53 @@
-# README
+# Flatnote - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Flatnote demo](https://j.gifs.com/YWJMM9.gif)
 
-Things you may want to cover:
+Flatnote is a note-taking app that allows users to easily filter notes by multiple tags.
 
-* Ruby version
+[Full Demo](https://www.youtube.com/watch?v=reKIlvSAIFo&feature=youtu.be)
 
-* System dependencies
+[Front End Repo](https://github.com/mpottebaum/flatnote-frontend)
 
-* Configuration
+## Installing Flatnote
 
-* Database creation
+To install Flatnote, follow these steps:
 
-* Database initialization
+1. Clone this repo and install gems
 
-* How to run the test suite
+```
+git clone git@github.com:mpottebaum/flatnote-backend.git
 
-* Services (job queues, cache servers, search engines, etc.)
+cd flatnote-backend
+bundle
+```
 
-* Deployment instructions
+2. Clone the [Front End repo](https://github.com/mpottebaum/flatnote-frontend) and install dependencies
 
-* ...
+```
+git clone git@github.com:mpottebaum/flatnote-frontend.git
+
+cd flatnote-frontend
+npm install
+```
+
+## Using Flatnote
+
+To use Flatnote, follow these steps:
+
+1. From the flatnote-backend directory, start the API server. Make sure the API server is running on `localhost:3000`.
+
+```
+rails s
+```
+
+2. From the flatnote-frontend directory, start the front end server.
+
+```
+npm start
+```
+
+The front end server should automatically run on `localhost:3001`, but any port will work.
+
+## Contact
+
+If you want to contact me you can reach me at mpottebaum@gmail.com.
